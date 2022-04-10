@@ -10,13 +10,29 @@ import './App.css';
 import hazel from './imgs/hazel.jpg'
 import whiskey from './imgs/whiskey.jpg'
 import tubby from './imgs/tubby.jpg'
+import Palette from './Component/Palette'
 import Navbar from './Navbar/Navbar'
 import DogRoute from './Component/DogRoute'
-
+import seedColors from './Component/seedColors'
+import {generatePalette} from './Component/colorHelpers';
 export default class App extends Component {
+  render() {
+    console.log(generatePalette(seedColors[4]));
+    return (
+      <div className="App">
+        <Palette palette={generatePalette(seedColors[4])} />
+      </div>
+    );
+  }
+}
 
-  static defaultProps = {
-    dogs: [
+
+
+
+
+{/* // DOG LIST
+    static defaultProps = {
+      dogs: [
       {
         name: "Whiskey",
         age: 5,
@@ -49,16 +65,7 @@ export default class App extends Component {
       }
     ]
   }
-
-  render() {
-    return (
-      <div className="App">
         <Navbar dogs={this.props.dogs}/>
         <div className="container">
           <DogRoute dogs={this.props.dogs} />
-        </div>
-      </div>
-    );
-  }
-}
-
+        </div> */}
